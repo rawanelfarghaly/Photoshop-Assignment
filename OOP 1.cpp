@@ -29,7 +29,7 @@ string filename, file1, file2;
 int choose = 0;
 
 enum enFilter {
-	grayscale = 1, Black_and_white = 3, Invert_Filter = 4, merge_2_images = 5, Flip_image = 6,darken_and_lighten_image=7, Crop_image = 9,detect_edges=10, Resize_image = 12, Blur_Image = 13, Purple_Wano = 15
+	grayscale = 2, Black_and_white = 3, Invert_Filter = 4, merge_2_images = 5, Flip_image = 6,darken_and_lighten_image=8, Crop_image = 9,detect_edges=11, Resize_image = 12, Blur_Image = 13, Purple_Wano = 15
 };
 
 void Choices()
@@ -379,6 +379,7 @@ void BlurFilter(Image& image, string& filename)
 	image = temp;
 	cout << "Blur applied.\n";
 }
+
 void LightenOrDarkenImage(Image& image, string& filename)
 {
     string choice;
@@ -423,7 +424,6 @@ void LightenOrDarkenImage(Image& image, string& filename)
     SaveFunction(image, filename);
     system(filename.c_str());
 }
-
 
 void CroppingImage(Image& image, string& filename)
 {
@@ -472,6 +472,7 @@ void CroppingImage(Image& image, string& filename)
 	}
 
 }
+
 void EdgeDetection(Image& image, string& filename)
 {
 	for (int w = 0; w < image.width; ++w)
@@ -528,7 +529,6 @@ void EdgeDetection(Image& image, string& filename)
 	SaveFunction(newimage, filename);
 	system(filename.c_str());
 }
-
 
 void PurpleWano(Image& image, string& filename)
 {
