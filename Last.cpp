@@ -211,6 +211,11 @@ void Merge2images(Image& image, string& filename)
 			{
 				for (int w = 0; w < maxWidth; w++)
 				{
+					int x1 = w * image1.width / maxWidth;
+					int y1 = h * image1.height / maxHeight;
+					int x2 = w * image2.width / maxWidth;
+					int y2 = h * image2.height / maxHeight;
+
 					for (int c = 0; c < 3; c++)
 					{
 						unsigned char temp = 0;
